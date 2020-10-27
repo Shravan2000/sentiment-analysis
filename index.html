@@ -1,0 +1,31 @@
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+<body>
+<form action="{{ url_for('main') }}" method="POST">
+<fieldset>
+<legend>Input values</legend>
+Tweet:<br>
+<input type='text' name='tweet'>
+<br>
+<br>
+<input type="submit">
+</fieldset>
+</form>
+<div class="result" align="center">
+        {% block heading %}
+        <br>
+        <br> Predicted sentiment of the tweet:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endblock %}
+</div>
+</html>
